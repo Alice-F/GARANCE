@@ -40,3 +40,5 @@ yarn-debug.log*
 *.swp
 .DS_Store
 .env*
+# Ignore google_cloud_storage_key.json file containing credentials.
+/config/secrets/*
