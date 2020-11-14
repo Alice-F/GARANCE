@@ -1,7 +1,9 @@
 .container
   h1 = @brand.name
   p = @brand.description
-  = image_tag @brand.photo
+  //= image_tag @brand.photo
   //video src="https://storage.googleapis.com/garance-photos-dev/bgi4dvvk2djwhof7yrffkgp5jru8" controls=true
-  video src=@brand.video.service_url.split("?").first controls=true
   //= video_tag @brand.video
+
+  video src=url_for(@brand.video) controls=true
+  image src=url_for(@brand.photo)
