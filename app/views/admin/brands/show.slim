@@ -1,7 +1,7 @@
 .container
   h1 = @brand.name
   p = @brand.description
-  = image_tag @brand.photo
-  //video src="https://storage.googleapis.com/garance-photos-dev/bgi4dvvk2djwhof7yrffkgp5jru8" controls=true
-  //video src=@brand.video.service_url.split("?").first controls=true
-  //= video_tag @brand.video
+  - if @brand.photo.present?
+    div style="height:25vh" = image_tag @brand.photo, style: "height:100%"
+  - if @brand.video.present?
+    div style="height:50vh"= video_tag url_for(@brand.video), controls: true, style: "height:100%"
