@@ -3,5 +3,5 @@
   p = @brand.description
   = image_tag @brand.photo
   //video src="https://storage.googleapis.com/garance-photos-dev/bgi4dvvk2djwhof7yrffkgp5jru8" controls=true
-  video src=@brand.video.service_url.split("?").first controls=true
-  //= video_tag @brand.video
+  //video src=@brand.video.service_url.split("?").first controls=true
+  = video_tag @brand.video
