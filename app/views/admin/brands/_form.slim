@@ -1,4 +1,6 @@
 = simple_form_for [:admin, brand], remote: true do |f|
   = f.input :name
   = f.input :description
+  = f.input :photo, as: :file
+  = f.input :video, as: :file
   = f.submit
