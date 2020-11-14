@@ -32,9 +32,6 @@ gem 'devise'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
-gem 'simple_form'
-
-gem "google-cloud-storage"
 
 group :development, :test do
   gem 'pry-byebug'
@@ -71,3 +68,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # FRONT
 gem 'slim-rails'
+gem 'simple_form'
+gem 'turbolinks_render'
+
+# BACK
+gem 'pundit'
+gem 'google-cloud-storage'

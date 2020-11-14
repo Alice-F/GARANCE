@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
   namespace :admin do
     root to: 'pages#home'
+
     controller :pages do
       get :home
     end
+
+    resources :brands, only: %i[show new create]
+
   end
 end
