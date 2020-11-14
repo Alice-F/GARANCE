@@ -83,3 +83,9 @@ production:
   database: garance_production
   username: garance
   password: <%= ENV['GARANCE_DATABASE_PASSWORD'] %>
+
+staging:
+  <<: *default
+  database: garance_staging
+  username: garance
+  password: <%= ENV['GARANCE_DATABASE_PASSWORD'] %>
