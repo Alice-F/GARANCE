@@ -69,6 +69,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # FRONT
 gem 'slim-rails'
 gem 'simple_form'
+gem 'turbolinks_render'
 
 # BACK
 gem 'pundit'
