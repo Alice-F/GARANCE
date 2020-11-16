@@ -4,4 +4,5 @@
   - if @brand.photo.present?
     div style="height:25vh" = image_tag @brand.photo, style: "height:100%"
   - if @brand.video.present?
-    div style="height:50vh"= video_tag url_for(@brand.video), controls: true, poster: url_for(@brand.photo), style: "height:100%"
+    //div style="height:50vh"= video_tag url_for(@brand.video), controls: true, poster: url_for(@brand.photo), style: "height:100%"
+    //div style="height:50vh"= video_tag url_for(@brand.video), controls: true, style: "height:100%"
