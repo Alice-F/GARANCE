@@ -1,0 +1,5 @@
+.container
+  h1 Les marques
+  .cards
+    - @brands.each do |brand|
+      = render 'card', brand: brand

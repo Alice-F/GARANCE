@@ -1,5 +1,9 @@
 class Admin::BrandsController < ApplicationController
 
+  def index
+    @brands = policy_scope([:admin, Brand])
+  end
+
   def new
     @brand = Brand.new
     authorize [:admin, @brand]
@@ -23,7 +27,7 @@ class Admin::BrandsController < ApplicationController
   private
 
   def brand_params
-    params.require(:brand).permit(:name, :description, :photo, :video)
+    params.require(:brand).permit(:name, :description, :photo)
   end
 
 end
