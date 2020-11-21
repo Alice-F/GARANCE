@@ -1,12 +1,16 @@
 .container
   h1 = @brand.name
-  p = @brand.description
-  - if @brand.photo.present?
-    div style="height:25vh" = image_tag @brand.photo, style: "height:100%"
-    /// To get the url of google cloud storage: the problem is that image can be accessed with url written in browser
-    // div style="height:25vh" = image_tag @brand.photo.service_url, style: "height:100%"
-  //- if @brand.video.present?
-    div style="height:50vh" = video_tag (url_for(@brand.video) + "#t=0.5"), controls: true, style: "height:100%"
-    // #t=0.5 allows to begin video at 0.5 seconds so display the image instead of getting white screen
-    // To get the url of google cloud storage: the problem is that video is uploaded when url written in browser
-    // div style="height:50vh" = video_tag (url_for(@brand.video.service_url) + "#t=0.5"), controls: true, style: "height:100%"
+  .d-flex.align-items-center
+    .pr-5 style="height: 25vh" = image_tag @brand.photo, class: "h-100"
+    div
+      = simple_format(@brand.description)
+
+//- if @brand.photo.present?
+  div style="height:25vh" = image_tag @brand.photo, style: "height:100%"
+  /// To get the url of google cloud storage: the problem is that image can be accessed with url written in browser
+  // div style="height:25vh" = image_tag @brand.photo.service_url, style: "height:100%"
+//- if @brand.video.present?
+  div style="height:50vh" = video_tag (url_for(@brand.video) + "#t=0.5"), controls: true, style: "height:100%"
+  // #t=0.5 allows to begin video at 0.5 seconds so display the image instead of getting white screen
+  // To get the url of google cloud storage: the problem is that video is uploaded when url written in browser
+  // div style="height:50vh" = video_tag (url_for(@brand.video.service_url) + "#t=0.5"), controls: true, style: "height:100%"

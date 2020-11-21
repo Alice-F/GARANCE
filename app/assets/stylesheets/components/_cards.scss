@@ -1,6 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
 }
 
 .card {
@@ -14,10 +15,10 @@
   }
   &-description{
     padding: 1rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    position: relative;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: flex-end;
+    // position: relative;
   }
 }
 
