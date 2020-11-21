@@ -1,5 +1,3 @@
 class Category < ApplicationRecord
-  validates :name, presence: true, uniqness: true
-
-  has_many_attached :photos
+  validates :name, presence: true, uniqueness: true
 end
