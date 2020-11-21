@@ -1,10 +1,12 @@
 fr:
   activerecord:
-
     attributes:
       brand:
         name: Nom
         description: Description
+      category:
+        name: Nom
 
     models:
       brand: Marque
+      category: Catégorie
