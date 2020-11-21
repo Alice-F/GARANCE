@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       get :home
     end
 
-    resources :brands, only: %i[show new create]
+    resources :brands, only: %i[index show new create]
 
   end
 end

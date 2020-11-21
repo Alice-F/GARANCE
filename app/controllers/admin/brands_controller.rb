@@ -1,5 +1,9 @@
 class Admin::BrandsController < ApplicationController
 
+  def index
+    @brands = policy_scope([:admin, Brand])
+  end
+
   def new
     @brand = Brand.new
     authorize [:admin, @brand]
