@@ -1,0 +1,10 @@
+fr:
+  activerecord:
+
+    attributes:
+      brand:
+        name: Nom
+        description: Description
+
+    models:
+      brand: Marque

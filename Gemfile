@@ -74,3 +74,7 @@ gem 'turbolinks_render'
 # BACK
 gem 'pundit'
 gem 'google-cloud-storage'
+
+# TRANSLATIONS
+gem 'devise-i18n'
+gem 'rails-i18n'
