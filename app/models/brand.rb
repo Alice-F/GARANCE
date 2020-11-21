@@ -3,5 +3,5 @@ class Brand < ApplicationRecord
   validates :photo, presence: true
 
   has_one_attached :photo
-  has_one_attached :video
+  # has_one_attached :video
 end
