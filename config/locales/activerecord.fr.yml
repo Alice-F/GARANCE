@@ -6,7 +6,10 @@ fr:
         description: Description
       category:
         name: Nom
+      size:
+        name: Nom
 
     models:
       brand: Marque
       category: Catégorie
+      size: Taille

@@ -1,9 +1,9 @@
 .container
   h1 = @brand.name
   .d-flex.align-items-center
-    .pr-5 style="height: 25vh" = image_tag @brand.photo, class: "h-100"
+    .d-flex.justify-content-center.align-items-center.h-100.pr-5 style="width: 30vw" = image_tag @brand.photo, class: "w-100"
     div
-      = simple_format(@brand.description)
+      = simple_format(@brand.description, class: "mb-0")
 
 //- if @brand.photo.present?
   div style="height:25vh" = image_tag @brand.photo, style: "height:100%"
