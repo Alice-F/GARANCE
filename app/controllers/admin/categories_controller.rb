@@ -1,5 +1,9 @@
 class Admin::CategoriesController < ApplicationController
 
+  def index
+    @categories = policy_scope([:admin, Category])
+  end
+
   def new
     @category = Category.new
     authorize [:admin, @category]
@@ -9,8 +13,8 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(category_params)
     authorize [:admin, @category]
     if @category.save
-      redirect_to admin_home_path
-      flash[:notice] = "La nouvelle catégorie #{@category.name.downcase} est créée"
+      redirect_to admin_categories_path
+      # flash[:notice] = "La nouvelle catégorie #{@category.name.downcase} est créée"
     else
       render :new
     end
