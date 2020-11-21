@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to admin_home_path, class: "navbar-brand" do %>
     <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
 
@@ -11,11 +11,17 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <% if admin_signed_in? %>
-        <li class="nav-item active">
+        <li class="nav-item">
           <%= link_to "Les marques", admin_brands_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to "Créer une marque", new_admin_brand_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Créer une catégorie", new_admin_category_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Les catégories", admin_categories_path, class: "nav-link" %>
         </li>
 
         <li class="nav-item dropdown">
