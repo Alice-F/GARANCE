@@ -13,5 +13,6 @@ Rails.application.routes.draw do
     resources :brands, only: %i[index show new create]
     resources :categories, only: %i[new create index]
     resources :sizes, only: %i[new create index]
+    resources :products, only: %i[new create index]
   end
 end
