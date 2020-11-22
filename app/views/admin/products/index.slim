@@ -1,0 +1,5 @@
+.container
+  h1 Les produits
+  .cards
+    - @products.each do |product|
+      = render 'card', product: product
