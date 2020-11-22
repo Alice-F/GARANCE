@@ -7,4 +7,6 @@ class Brand < ApplicationRecord
 
   has_one_attached :photo
   # has_one_attached :video
+
+  default_scope { order(name: :asc) }
 end
