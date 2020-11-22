@@ -21,6 +21,11 @@
     // align-items: flex-end;
     // position: relative;
   }
+  &-one-line {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
 }
 
 // .card-trip h2 {
