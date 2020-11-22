@@ -1,0 +1,9 @@
+= simple_form_for [:admin, product], remote: true do |f|
+  = f.input :name
+  = f.input :description
+  = f.input :composition
+  = f.association :brand, as: :select, prompt: true, collection: @brands
+  = f.association :category, as: :select, prompt: true, collection: @categories
+  = f.input :main_photo, as: :file
+  = f.input :complementary_photos, as: :file, input_html: { multiple: true }
+  = f.submit

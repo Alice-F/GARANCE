@@ -44,3 +44,19 @@ size_attributes = [
 puts 'Seeding Sizes'
 Size.create! size_attributes
 puts 'Sizes done'
+
+# Products
+puts 'Seeding Products'
+bonnet = Product.new(name: "Bonnet Appletinit Coral", brand: Brand.first, category: Category.first, description: "Un bonnet tout doux, avec ses 3 pompons interchangeables grâce à un système d'aimant puissant, pour assortir votre bonnet à toutes vos tenues et à votre humeur.", composition: "100\'%\' acrylique")
+bonnet.main_photo.attach(io: open("https://storage.googleapis.com/garance-photos-dev/bonnet_1.png"), filename: "bonnet_1.png")
+bonnet.complementary_photos.attach(io: open("https://storage.googleapis.com/garance-photos-dev/bonnet_2.jpg"), filename: "bonnet_2.jpg")
+bonnet.complementary_photos.attach(io: open("https://storage.googleapis.com/garance-photos-dev/bonnet_3.jpg"), filename: "bonnet_2.jpg")
+bonnet.save
+robe = Product.new(name: "Robe blanche", brand: Brand.last, category: Category.last, description: "Robe longue plissée Painterly en crépon mousseline imprimé, motif exclusif Sessùn.", composition: "100\'%\' polyester")
+robe.main_photo.attach(io: open("https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NXx8ZHJlc3N8ZW58MHx8MHw\'%\'3D&auto=format&fit=crop&w=500&q=60"), filename: "robe_1")
+robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-1566491888763-e71518bbe846?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8Nnx8ZHJlc3N8ZW58MHx8MHw\'%\'3D&auto=format&fit=crop&w=500&q=60"), filename: "robe_2")
+robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-1534534665817-8493579d3fde?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8NHx8ZHJlc3N8ZW58MHx8MHw\'%\'3D&auto=format&fit=crop&w=500&q=60"), filename: "robe_2")
+robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-1530893608544-cd10fda1ac14?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8OHx8ZHJlc3N8ZW58MHx8MHw\'%\'3D&auto=format&fit=crop&w=500&q=60"), filename: "robe_3")
+robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-1533659828870-95ee305cee3e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGRyZXNzfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60"), filename: "robe_4")
+robe.save
+puts 'Products done'

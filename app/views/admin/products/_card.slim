@@ -1,0 +1,13 @@
+.card
+  = image_tag product.main_photo
+  - if product.complementary_photos.present?
+    - product.complementary_photos.each do |complementary_photo|
+      = image_tag complementary_photo
+  .card-description
+    h2 = product.name
+    p Marque: #{product.brand.name}
+    p Catégorie: #{product.category.name}
+    p.mb-0 Description:
+    p.card-one-line = product.description
+    p.mb-0 Composition:
+    p.card-one-line = product.composition
