@@ -8,6 +8,14 @@ fr:
         name: Nom
       size:
         name: Nom
+      product:
+        name: Nom
+        description: Description
+        composition: Composition
+        main_photo: Photo principale
+        complementary_photos: Photos annexes
+        brand: Marque
+        category: Catégorie
 
     models:
       brand: Marque
