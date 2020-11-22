@@ -8,8 +8,8 @@ class Product < ApplicationRecord
   validates :brand, presence: true
   validates :category, presence: true
   validates :main_photo, presence: true
-  validates :photos, length: { maximum: 4 }
+  validates :complementary_photos, length: { maximum: 4 }
 
   has_one_attached :main_photo
-  has_many_attached :photos
+  has_many_attached :complementary_photos
 end
