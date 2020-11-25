@@ -1,0 +1,11 @@
+.btn {
+  padding: 1rem 0.5rem;
+  margin: 1rem;
+  text-transform: uppercase;
+  padding: 1rem;
+  background-color: lightgray;
+  color: white;
+  &:hover {
+    color: grey;
+  }
+}
