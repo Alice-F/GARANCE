@@ -7,6 +7,14 @@ class Admin::ProductPolicy < ApplicationPolicy
     new?
   end
 
+  def edit?
+    true
+  end
+
+  def update?
+    edit?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

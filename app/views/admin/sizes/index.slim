@@ -2,4 +2,6 @@
   h1 Les tailles
   ul
   - @sizes.each do |size|
-    li = size.name
+    .d-flex.align-items-center
+      li = size.name
+      = link_to "Modifier", edit_admin_size_path(size), class: "btn"

@@ -1,0 +1,6 @@
+<div class="container">
+  <h1>
+    Modifier la taille <%= "#{@size.name}" if @size.name.present? %>
+  </h1>
+  <%= render 'form', size: @size  %>
+</div>

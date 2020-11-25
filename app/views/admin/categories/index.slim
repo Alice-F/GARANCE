@@ -2,4 +2,6 @@
   h1 Les catégories
   ul
   - @categories.each do |category|
-    li = category.name
+    .d-flex.align-items-center
+      li = category.name
+      = link_to "Modifier", edit_admin_category_path(category), class: "btn"
