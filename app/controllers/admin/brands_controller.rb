@@ -1,5 +1,7 @@
 class Admin::BrandsController < ApplicationController
 
+  before_action :find_brand, only: %i[show edit update]
+
   def index
     @brands = policy_scope([:admin, Brand])
   end
@@ -20,11 +22,25 @@ class Admin::BrandsController < ApplicationController
   end
 
   def show
-    @brand = Brand.find(params[:id])
-    authorize [:admin, @brand]
+  end
+
+  def edit
+  end
+
+  def update
+    if @brand.update(brand_params)
+      redirect_to admin_brand_path(@brand)
+    else
+      render :edit
+    end
   end
 
   private
+
+  def find_brand
+    @brand = Brand.find(params[:id])
+    authorize [:admin, @brand]
+  end
 
   def brand_params
     params.require(:brand).permit(:name, :description, :photo)
