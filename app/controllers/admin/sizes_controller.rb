@@ -1,4 +1,7 @@
 class Admin::SizesController < ApplicationController
+
+  before_action :find_size, only: %i[edit update]
+
   def index
     @sizes = policy_scope([:admin, Size])
   end
@@ -18,7 +21,23 @@ class Admin::SizesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @size.update(size_params)
+      redirect_to admin_sizes_path
+    else
+      render :edit
+    end
+  end
+
   private
+
+  def find_size
+    @size = Size.find(params[:id])
+    authorize [:admin, @size]
+  end
 
   def size_params
     params.require(:size).permit(:name)
