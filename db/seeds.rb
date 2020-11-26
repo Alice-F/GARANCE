@@ -1,9 +1,11 @@
 puts 'Destroying'
 User.destroy_all
 Admin.destroy_all
+Stock.destroy_all
+Size.destroy_all
+Product.destroy_all
 Category.destroy_all
 Brand.destroy_all
-Size.destroy_all
 puts 'Destroying done'
 
 # Admins
@@ -60,3 +62,14 @@ robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-153
 robe.complementary_photos.attach(io: open("https://images.unsplash.com/photo-1533659828870-95ee305cee3e?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTB8fGRyZXNzfGVufDB8fDB8&auto=format&fit=crop&w=500&q=60"), filename: "robe_4")
 robe.save
 puts 'Products done'
+
+# Stocks
+stock_attributes = [
+  { quantity: 1, product: Product.first, size: Size.last },
+  { quantity: 1, product: Product.last, size: Size.first },
+  { quantity: 1, product: Product.last, size: Size.second },
+  { quantity: 1, product: Product.last, size: Size.third },
+]
+puts 'Seeding Stocks'
+Stock.create! stock_attributes
+puts 'Stocks done'
