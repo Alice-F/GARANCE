@@ -1,8 +1,4 @@
-class Admin::ProductPolicy < ApplicationPolicy
-  def show?
-    true
-  end
-
+class Admin::StockPolicy < ApplicationPolicy
   def new?
     true
   end

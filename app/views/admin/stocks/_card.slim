@@ -1,0 +1,9 @@
+.card
+  = image_tag stock.product.main_photo
+  .card-description
+    h2 = stock.product.name
+    p Marque: #{stock.brand.name}
+    p Catégorie: #{stock.category.name}
+    p Taille: #{stock.size.name}
+    p Stock: #{stock.quantity}
+    .text-center = link_to "Modifier", edit_admin_stock_path(stock), class: "btn"

@@ -1,0 +1,4 @@
+<div class="container">
+  <h1>Ajouter du stock pour <%= @product.name %> (<%= @product.brand.name %>)</h1>
+  <%= render 'form', stock: @stock, product: @product  %>
+</div>

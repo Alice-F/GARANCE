@@ -16,9 +16,14 @@ fr:
         complementary_photos: Photos annexes
         brand: Marque
         category: Catégorie
+      stock:
+        quantity: Quantité
+        product: Produit
+        size: Taille
 
     models:
       brand: Marque
       category: Catégorie
       size: Taille
       product: Produit
+      stock: Stock

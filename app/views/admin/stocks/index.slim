@@ -1,0 +1,5 @@
+.container
+  h1 Les stocks
+  .cards
+    - @stocks.each do |stock|
+      = render 'card', stock: stock

@@ -1,10 +1,13 @@
 class Admin::ProductsController < ApplicationController
   before_action :find_brands, only: %i[new create edit update]
   before_action :find_categories, only: %i[new create edit update]
-  before_action :find_product, only: %i[edit update]
+  before_action :find_product, only: %i[show edit update]
 
   def index
     @products = policy_scope([:admin, Product])
+  end
+
+  def show
   end
 
   def new

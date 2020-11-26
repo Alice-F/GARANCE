@@ -1,9 +1,9 @@
 class Brand < ApplicationRecord
+  has_many :products
+
   validates :name, presence: true, uniqueness: true
   validates :photo, presence: true
   validates :description, presence: true
-
-  has_many :products#, dependent: :destroy
 
   has_one_attached :photo
   # has_one_attached :video

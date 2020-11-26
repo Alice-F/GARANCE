@@ -11,8 +11,10 @@ Rails.application.routes.draw do
     end
 
     resources :brands, only: %i[index show new create edit update]
-    resources :categories, only: %i[new create index edit update]
-    resources :sizes, only: %i[new create index edit update]
-    resources :products, only: %i[new create index edit update]
+    resources :categories, only: %i[index new create edit update]
+    resources :sizes, only: %i[index new create edit update]
+    resources :products, only: %i[index show new create edit update] do
+      resources :stocks, only: %i[new create edit update]
+    end
   end
 end
