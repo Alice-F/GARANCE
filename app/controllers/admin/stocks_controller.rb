@@ -1,22 +1,20 @@
 class Admin::StocksController < ApplicationController
   before_action :find_sizes, only: %i[new create edit update]
-  before_action :find_products, only: %i[new create edit update]
+  before_action :find_product, only: %i[new create edit update]
+  # before_action :find_products, only: %i[new create edit update]
   before_action :find_stock, only: %i[edit update]
 
-  def index
-    @stocks = policy_scope([:admin, Stock])
-  end
-
   def new
-    @stock = Stock.new
+    @stock = Stock.new(product: @product)
     authorize [:admin, @stock]
   end
 
   def create
     @stock = Stock.new(stock_params)
+    @stock.product = @product
     authorize [:admin, @stock]
     if @stock.save
-      redirect_to admin_stocks_path
+      redirect_to admin_products_path
     else
       render :new
     end
@@ -27,7 +25,7 @@ class Admin::StocksController < ApplicationController
 
   def update
     if @stock.update(stock_params_edit)
-      redirect_to admin_stocks_path
+      redirect_to admin_products_path
     else
       render :edit
     end
@@ -40,16 +38,20 @@ class Admin::StocksController < ApplicationController
     authorize [:admin, @stock]
   end
 
+  def find_product
+    @product = Product.find(params[:product_id])
+  end
+
   def find_sizes
     @sizes = policy_scope([:admin, Size])
   end
 
-  def find_products
-    @products = policy_scope([:admin, Product]).includes(:brand).order('brands.name ASC')
-  end
+  # def find_products
+  #   @products = policy_scope([:admin, Product]).includes(:brand).order('brands.name ASC')
+  # end
 
   def stock_params
-    params.require(:stock).permit(:quantity, :product_id, :size_id)
+    params.require(:stock).permit(:quantity, :size_id)
   end
 
   def stock_params_edit

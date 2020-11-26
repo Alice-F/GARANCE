@@ -1,0 +1,6 @@
+.container
+  h1 #{@product.brand.name} - #{@product.name}
+  .d-flex.align-items-center
+    .d-flex.justify-content-center.align-items-center.h-100.pr-5 style="width: 30vw" = image_tag @product.main_photo, class: "w-100"
+    div
+      = simple_format(@product.description, class: "mb-0")
