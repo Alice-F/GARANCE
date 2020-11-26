@@ -1,0 +1,9 @@
+= simple_form_for [:admin, stock], remote: true do |f|
+  - if params[:action] == 'new'
+    = f.association :product, as: :select, prompt: true, collection: @products.map { |product| [product.id, "#{ product.brand.name } - #{ product.name }"] }, label_method: :second, value_method: :first
+    = f.association :size, as: :select, prompt: true, collection: @sizes
+  - else
+    p Marque : #{stock.brand.name}
+    p Produit: #{stock.product.name}
+  = f.input :quantity
+  = f.submit
