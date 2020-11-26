@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :categories, only: %i[new create index edit update]
     resources :sizes, only: %i[new create index edit update]
     resources :products, only: %i[new create index edit update]
+    resources :stocks, only: %i[new create index edit update]
   end
 end
