@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
     controller :pages do
       get :home
+      get :test_private
     end
 
     resources :brands, only: %i[index show new create edit update]
